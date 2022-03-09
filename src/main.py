@@ -37,4 +37,4 @@ def daemonize(client):
 
 if __name__ == '__main__':
     while True:
-        daemonize()
+        daemonize(client)
