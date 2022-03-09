@@ -1,4 +1,5 @@
-import asyncio
+import os
+import sys
 
 import discord
 
@@ -22,4 +23,11 @@ async def on_message(message):
         imgPath = IMG_DIR + msg + ".png"
         await message.channel.send(file=discord.File(imgPath))
 
-client.run(TOKEN)
+pid = os.fork()
+if pid > 0:
+    with open('/var/run/disConoha.pid', 'w') as f:
+        f.write(str(pid)+"\n")
+    
+    sys.exit()
+if pid == 0:
+    client.run(TOKEN)
