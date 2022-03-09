@@ -8,7 +8,7 @@ import conoha_dict
 TOKEN = discordSettings.TOKEN
 C_DICT = conoha_dict.C_DICT
 WORDS = C_DICT.keys()
-IMG_DIR = "../assets/img/"
+IMG_DIR = "./assets/img/"
 
 client = discord.Client()
 
