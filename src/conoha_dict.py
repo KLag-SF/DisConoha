@@ -39,3 +39,11 @@ C_DICT = {
     "なんだぁ?てめぇ":"c_wtf",
     "ｱﾘｶﾞﾄｳｺﾞｻﾞｲﾏｽ!":"takeshi",
 }
+
+def get_word_list():
+    word_list = "```"
+    for word in C_DICT.keys():
+        word_list += word + "\n"
+    
+    word_list += "```"
+    return word_list
