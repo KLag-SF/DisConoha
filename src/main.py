@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+from re import T
 import sys
 
 import discord
@@ -24,11 +25,16 @@ async def on_message(message):
         imgPath = IMG_DIR + msg + ".png"
         await message.channel.send(file=discord.File(imgPath))
 
-pid = os.fork()
-if pid > 0:
-    with open('/var/run/disConoha.pid', 'w') as f:
-        f.write(str(pid)+"\n")
+def daemonize(client):
+    pid = os.fork()
+    if pid > 0:
+        with open('/var/run/disConoha.pid', 'w') as f:
+            f.write(str(pid)+"\n")
     
-    sys.exit()
-if pid == 0:
-    client.run(TOKEN)
+        sys.exit()
+    if pid == 0:
+        client.run(TOKEN)
+
+if __name__ == '__main__':
+    while True:
+        daemonize()
