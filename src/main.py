@@ -1,6 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
-from re import T
 import sys
 
 import discord
@@ -11,7 +10,7 @@ import conoha_dict
 TOKEN = discordSettings.TOKEN
 C_DICT = conoha_dict.C_DICT
 WORDS = C_DICT.keys()
-IMG_DIR = "../assets/img/"
+IMG_DIR = "/opt/disConoha/assets/img/"
 
 client = discord.Client()
 
