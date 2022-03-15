@@ -23,8 +23,8 @@ async def on_message(message):
     elif msg in C_DICT.values():
         imgPath = IMG_DIR + msg + ".png"
         await message.delete()
-        await message.channel.send(content=f"By {message.author}")
         await message.channel.send(file=discord.File(imgPath))
+        await message.channel.send(content=f"By {message.author}")
     elif msg == "!words":
         word_list = conoha_dict.get_word_list()
         await message.channel.send(word_list)
