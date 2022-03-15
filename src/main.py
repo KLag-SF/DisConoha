@@ -22,6 +22,8 @@ async def on_message(message):
         await message.channel.send(file=discord.File(imgPath))
     elif msg in C_DICT.values():
         imgPath = IMG_DIR + msg + ".png"
+        await message.delete()
+        await message.channel.send(content=f"By {message.author}")
         await message.channel.send(file=discord.File(imgPath))
     elif msg == "!words":
         word_list = conoha_dict.get_word_list()
@@ -38,5 +40,8 @@ def daemonize(client):
         client.run(TOKEN)
 
 if __name__ == '__main__':
-    while True:
-        daemonize(client)
+    if '-t' not in sys.argv:
+        while True:
+            daemonize(client)
+    else:
+        client.run(TOKEN)
