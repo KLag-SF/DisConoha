@@ -47,3 +47,14 @@ def get_word_list():
     
     word_list += "```"
     return word_list
+
+def get_imgID_list():
+    id_list = "```"
+    img_IDs = sorted(set(C_DICT.values()))
+    for id in img_IDs:
+        id_list += id + "\n"
+
+    return id_list
+
+if __name__ == "__main__":
+    pass
