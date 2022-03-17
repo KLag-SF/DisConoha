@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ ${EUID:-{$-UID}} != 0 ]; then
+if [ `whoami` != 'root' ]; then
     echo 'Permission denied. Please execute as root'
+else
+	git pull
+	systemctl restart disConoha
 fi
-
-git pull
-systemctl restart disConoha
