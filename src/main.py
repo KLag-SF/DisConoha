@@ -28,6 +28,9 @@ async def on_message(message):
     elif msg == "!words":
         word_list = conoha_dict.get_word_list()
         await message.channel.send(word_list)
+    elif msg == "!id" or msg == "!ids":
+        id_list = conoha_dict.get_imgID_list()
+        await message.channel.send(id_list)
 
 def daemonize(client):
     pid = os.fork()
