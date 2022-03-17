@@ -54,6 +54,7 @@ def get_imgID_list():
     for id in img_IDs:
         id_list += id + "\n"
 
+    img_IDs += "```"
     return id_list
 
 if __name__ == "__main__":
