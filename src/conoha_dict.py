@@ -31,6 +31,7 @@ C_DICT = {
     "ぴえん":"c_pien",
     "うるさい":"c_quiet",
     "静かに":"c_quiet",
+    "シー":"c_quiet",
     "^^":"c_smile",
     "すまん":"c_sry",
     "ありがとう":"c_ty",
