@@ -3,5 +3,11 @@ if [ `whoami` != 'root' ]; then
     echo 'Permission denied. Please execute as root'
 else
     git pull
+	echo 'Restarting daemon...'
     systemctl restart disConoha
+	if [ $? == 0 ]; then
+		echo 'Succesfully updated!'
+	else
+		echo 'Update failed.'
+	fi
 fi
