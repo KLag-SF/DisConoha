@@ -44,6 +44,8 @@ C_DICT = {
     "なんだぁ？てめぇ":"c_wtf",
     "なんだぁ?てめぇ":"c_wtf",
     "ｱﾘｶﾞﾄｳｺﾞｻﾞｲﾏｽ!":"takeshi",
+    "確定":"kakutei",
+    "審議":"shingi",
 }
 
 def get_word_list():
