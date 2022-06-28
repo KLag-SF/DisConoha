@@ -38,7 +38,7 @@ async def on_message(message):
         await message.channel.send(id_list)
     
     if message.channel.id not in CHANNELS:
-        with open("channels.dat", "w") as f:
+        with open("../channels.dat", "w") as f:
             f.write(f"{message.channel.id}\n")
 
 def daemonize(client):
