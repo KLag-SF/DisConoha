@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import logging
 
 import discord
 
@@ -14,9 +15,14 @@ IMG_DIR = "/opt/disConoha/assets/img/"
 
 client = discord.Client()
 
+logging.basicConfig(filename="../disConoha.log", level=logging.DEBUG)
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
+
 @client.event
 async def on_message(message):
     msg = message.content
+    log.debug(msg)
     if msg in WORDS:
         imgPath = IMG_DIR + C_DICT[msg] + ".png"
         await message.channel.send(file=discord.File(imgPath))
@@ -40,6 +46,7 @@ def daemonize(client):
     
         sys.exit()
     if pid == 0:
+        log.debug("Client is now running.")
         client.run(TOKEN)
 
 if __name__ == '__main__':
