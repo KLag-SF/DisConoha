@@ -15,7 +15,7 @@ IMG_DIR = "/opt/disConoha/assets/img/"
 
 client = discord.Client()
 
-logging.basicConfig(filename="../disConoha.log", level=logging.DEBUG)
+logging.basicConfig(filename="/var/log/disConoha.log", level=logging.DEBUG)
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 log.debug("disConoha has successfully initialized.")
