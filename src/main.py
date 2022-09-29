@@ -18,6 +18,7 @@ client = discord.Client()
 logging.basicConfig(filename="../disConoha.log", level=logging.DEBUG)
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
+log.debug("disConoha has successfully initialized.")
 
 @client.event
 async def on_message(message):
