@@ -13,7 +13,7 @@ C_DICT = conoha_dict.C_DICT
 WORDS = C_DICT.keys()
 IMG_DIR = "/opt/disConoha/assets/img/"
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 
 logging.basicConfig(filename="/var/log/disConoha.log", level=logging.DEBUG)
