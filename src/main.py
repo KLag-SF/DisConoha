@@ -11,9 +11,10 @@ import conoha_dict
 TOKEN = discordSettings.TOKEN
 C_DICT = conoha_dict.C_DICT
 WORDS = C_DICT.keys()
-IMG_DIR = "/opt/disConoha/assets/img/"
+IMG_DIR = "/opt/disconoha/assets/img/"
 
 intents = discord.Intents.default()
+intents.message_content = True
 client = discord.Client(intents=intents)
 
 logging.basicConfig(filename="/var/log/disConoha.log", level=logging.DEBUG)
